@@ -12,8 +12,25 @@ app.get("/", function(req, res){
 });
 
 app.get("/api/timestamp/:date_string", function(req, res){
-		$data = req.params.date_string;
-			
+		var date = req.params.date_string;
+		vat dataobj;
+		if(date === null){
+			date = new Date();
+
+			if(isNAN(date) === true){
+				dataobj = {
+					"unix": "date.getTime()",
+					"utc": "date.toUTCString()"
+				};
+			}else{
+
+				dataobj = {
+					"unix": "null",
+					"utc": "invalid date"
+				};
+			}	
+		}
+		res.json(dataobj);	
 
 })
 
