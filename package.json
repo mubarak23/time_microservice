@@ -9,6 +9,8 @@
   "author": "mubarak aminu",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1"
   }
 }
